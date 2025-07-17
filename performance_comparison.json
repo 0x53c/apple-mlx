@@ -1,0 +1,137 @@
+{
+  "timestamp": "2025-07-16T23:15:54.572835",
+  "ssh_results": [
+    {
+      "network_type": "SSH",
+      "timestamp": "2025-07-16T23:12:26.535096",
+      "large_transfer_bandwidth": [
+        240000000.0,
+        266666666.7,
+        141176470.6,
+        514285714.3,
+        675000000.0,
+        635294117.6,
+        1129411764.7,
+        581818181.8,
+        1200000000.0
+      ],
+      "sustained_ops_rate": 845.8,
+      "sustained_throughput": 1393795.3,
+      "message_storm_rate": 374024.0
+    },
+    {
+      "network_type": "SSH",
+      "timestamp": "2025-07-16T23:13:06.906905",
+      "large_transfer_bandwidth": [
+        282352941.2,
+        282352941.2,
+        282352941.2,
+        635294117.6,
+        675000000.0,
+        415384615.4,
+        1129411764.7,
+        1129411764.7,
+        1200000000.0
+      ],
+      "sustained_ops_rate": 855.8,
+      "sustained_throughput": 1410269.2,
+      "message_storm_rate": 270252.0
+    },
+    {
+      "network_type": "SSH",
+      "timestamp": "2025-07-16T23:13:46.859205",
+      "large_transfer_bandwidth": [
+        600000000.0,
+        228571428.6,
+        282352941.2,
+        317647058.8,
+        490909090.9,
+        635294117.6,
+        1200000000.0,
+        376470588.2,
+        914285714.3
+      ],
+      "sustained_ops_rate": 852.1,
+      "sustained_throughput": 1404149.8,
+      "message_storm_rate": 383111.0
+    }
+  ],
+  "thunderbolt_results": [
+    {
+      "network_type": "Thunderbolt",
+      "timestamp": "2025-07-16T23:14:27.660756",
+      "large_transfer_bandwidth": [
+        240000000.0,
+        369230769.2,
+        228571428.6,
+        675000000.0,
+        635294117.6,
+        635294117.6,
+        1129411764.7,
+        960000000.0,
+        1200000000.0
+      ],
+      "sustained_ops_rate": 845.1,
+      "sustained_throughput": 1392620.2,
+      "message_storm_rate": 367921.0
+    },
+    {
+      "network_type": "Thunderbolt",
+      "timestamp": "2025-07-16T23:15:08.719186",
+      "large_transfer_bandwidth": [
+        282352941.2,
+        600000000.0,
+        228571428.6,
+        183050847.5,
+        540000000.0,
+        490909090.9,
+        1200000000.0,
+        768000000.0,
+        1129411764.7
+      ],
+      "sustained_ops_rate": 851.4,
+      "sustained_throughput": 1403065.2,
+      "message_storm_rate": 368698.0
+    },
+    {
+      "network_type": "Thunderbolt",
+      "timestamp": "2025-07-16T23:15:49.507304",
+      "large_transfer_bandwidth": [
+        282352941.2,
+        218181818.2,
+        218181818.2,
+        514285714.3,
+        514285714.3,
+        284210526.3,
+        914285714.3,
+        1129411764.7,
+        564705882.4
+      ],
+      "sustained_ops_rate": 826.4,
+      "sustained_throughput": 1361787.5,
+      "message_storm_rate": 421538.0
+    }
+  ],
+  "improvements": {
+    "large_transfer_bandwidth": {
+      "ssh_avg": 609657220.0481482,
+      "thunderbolt_avg": 597592598.6851852,
+      "improvement_percent": -1.9789188032596656
+    },
+    "sustained_ops_rate": {
+      "ssh_avg": 851.2333333333333,
+      "thunderbolt_avg": 840.9666666666667,
+      "improvement_percent": -1.206093119786974
+    },
+    "sustained_throughput": {
+      "ssh_avg": 1402738.1,
+      "thunderbolt_avg": 1385824.3,
+      "improvement_percent": -1.2057703430169926
+    },
+    "message_storm_rate": {
+      "ssh_avg": 342462.3333333333,
+      "thunderbolt_avg": 386052.3333333333,
+      "improvement_percent": 12.72840711435905
+    }
+  }
+}
