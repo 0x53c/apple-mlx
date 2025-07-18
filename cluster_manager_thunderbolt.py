@@ -99,6 +99,40 @@ class MacMiniClusterThunderboltOptimized:
         print(f"💾 Results: {results_file}")
         return result.returncode == 0
 
+    def run_mlx_inference(self, prompt, model_name="llama3.2:latest"):
+        print(f"🧠 MLX Inference: {model_name}")
+        print(f"💬 Prompt: {prompt[:50]}...")
+        escaped_prompt = prompt.replace('"', '\\"').replace('$', '\\$')
+        
+        inference_command = f"""
+        export PATH="/opt/homebrew/bin:/usr/local/bin:$PATH"
+        source {self.venv_path}/bin/activate
+        cd {self.remote_base_dir}
+        
+        echo "🧠 MLX Inference on Thunderbolt cluster"
+        /opt/homebrew/bin/mpirun \\
+            -np 3 \\
+            -H {','.join(self.ssh_ips)} \\
+            --map-by :OVERSUBSCRIBE \\
+            --mca btl_tcp_if_include 169.254.1.0/24 \\
+            --mca pml ob1 \\
+            --mca btl tcp,self \\
+            --mca orte_base_help_aggregate 0 \\
+            --allow-run-as-root \\
+            python3 mlx_inference_worker.py --prompt "{escaped_prompt}" --model {model_name}
+        """
+        
+        result = subprocess.run([
+            "ssh", "n1", inference_command
+        ], capture_output=True, text=True, timeout=1800)
+        
+        if result.returncode == 0:
+            return result.stdout.strip()
+        else:
+            print(f"❌ MLX inference failed: {result.stderr}")
+            return None
+
+
 def main():
     cluster = MacMiniClusterThunderboltOptimized()
     
